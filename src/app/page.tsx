@@ -20,13 +20,13 @@ export default function Home() {
 
   // Define the function with proper type
   const addTask = (newTaskTitle:string) => {
-    const newTask = { id: nanoid(), title: newTaskTitle, completed: false, deleteTaskFunc: deleteTask, toggleDoneTaskFunc: toggleDoneTask};
+    const newTask = { id: nanoid(), title: newTaskTitle, completed: false};
     const newTasks = [...tasks, newTask];
     setTasks(newTasks);
   };
 
   // Define the function with proper type
-  const deleteTask = (taskId:string) => {
+  const deleteTask = (taskId:any) => {
     const newTasks = tasks.filter((task) => task.id !== taskId);
     setTasks(newTasks);
   };
